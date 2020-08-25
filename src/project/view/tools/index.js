@@ -1,7 +1,7 @@
 /*
  * @Author: huangxin
  * @Date: 2020-08-14 11:09:24
- * @LastEditTime: 2020-08-21 10:52:33
+ * @LastEditTime: 2020-08-25 15:22:46
  * @motto: Still water run deep
  * @Description: Modify here please
  * @FilePath: /金渡教育/练习/react/event+axios+脚手架搭建+antd引入/react-demo/src/project/view/tools/index.js
@@ -10,7 +10,14 @@ import React,{Component} from 'react'
 import { Tabs } from 'antd';
 
 import Salary from './component/salary'
+import { connect } from 'echarts';
 const { TabPane } = Tabs;
+
+@connect(
+  (state)=>({
+    num:state.num
+  })
+)
 class Tools extends React.Component{
   callback(key) {
     console.log(key);
